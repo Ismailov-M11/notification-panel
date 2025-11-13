@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
     fs: {
-      allow: ["./client", "./shared", "./public"],
+      allow: ["..", ".", "./client", "./shared", "./public"], // ✅ исправлено
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
@@ -37,7 +37,6 @@ function expressPlugin(): Plugin {
       // Add a custom middleware to handle API requests
       return () => {
         server.middlewares.use((req, res, next) => {
-          // Pass API requests to Express
           if (req.url.startsWith("/api/")) {
             app(req, res);
           } else {
