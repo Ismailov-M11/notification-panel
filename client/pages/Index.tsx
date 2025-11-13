@@ -52,9 +52,9 @@ export default function Index() {
                   </div>
                 </div>
                 <div>
-                  <p className="font-medium">Admin отправляет заказ</p>
+                  <p className="font-medium">API отправляет заказ</p>
                   <p className="text-sm text-muted-foreground">
-                    Администратор заполняет форму с данными заказа и отправляет
+                    Внешняя система отправляет заказ через API с данными аптеки и лекарств
                   </p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function Index() {
                   <p className="font-medium">Сервер получает данные</p>
                   <p className="text-sm text-muted-foreground">
                     Backend обрабатывает запрос и отправляет уведомление в
-                    аптеку
+                    аптеку через WebSocket
                   </p>
                 </div>
               </div>
