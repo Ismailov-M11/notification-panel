@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Settings } from "lucide-react";
+import { Phone } from "lucide-react";
 
 export default function Index() {
   return (
@@ -16,29 +16,8 @@ export default function Index() {
           </p>
         </div>
 
-        {/* Main Grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {/* Admin Panel Card */}
-          <Card className="hover:shadow-lg transition-shadow border-primary/20">
-            <CardHeader className="bg-gradient-to-r from-primary to-blue-600 text-white">
-              <CardTitle className="flex items-center gap-2">
-                <Settings className="h-6 w-6" />
-                Admin Panel
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <p className="text-muted-foreground mb-6">
-                Отправляйте уведомления в аптеки о поступивших заказах
-              </p>
-              <a href="/admin/login" className="block">
-                <Button className="w-full" size="lg">
-                  Войти как администратор
-                </Button>
-              </a>
-            </CardContent>
-          </Card>
-
-          {/* Pharmacy Card */}
+        {/* Login Card */}
+        <div className="max-w-md mx-auto mb-8">
           <Card className="hover:shadow-lg transition-shadow border-primary/20">
             <CardHeader className="bg-gradient-to-r from-blue-600 to-primary text-white">
               <CardTitle className="flex items-center gap-2">
@@ -73,9 +52,10 @@ export default function Index() {
                   </div>
                 </div>
                 <div>
-                  <p className="font-medium">Admin отправляет заказ</p>
+                  <p className="font-medium">API отправляет заказ</p>
                   <p className="text-sm text-muted-foreground">
-                    Администратор заполняет форму с данными заказа и отправляет
+                    Внешняя система отправляет заказ через API с данными аптеки
+                    и лекарств
                   </p>
                 </div>
               </div>
@@ -90,7 +70,7 @@ export default function Index() {
                   <p className="font-medium">Сервер получает данные</p>
                   <p className="text-sm text-muted-foreground">
                     Backend обрабатывает запрос и отправляет уведомление в
-                    аптеку
+                    аптеку через WebSocket
                   </p>
                 </div>
               </div>
