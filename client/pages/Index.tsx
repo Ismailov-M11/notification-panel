@@ -54,7 +54,8 @@ export default function Index() {
                 <div>
                   <p className="font-medium">API отправляет заказ</p>
                   <p className="text-sm text-muted-foreground">
-                    Внешняя система отправляет заказ через API с данными аптеки и лекарств
+                    Внешняя система отправляет заказ через API с данными аптеки
+                    и лекарств
                   </p>
                 </div>
               </div>
